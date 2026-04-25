@@ -36,12 +36,14 @@ void CPU::run(){
                 uint16_t value = memory[pc];
                 registers[0] = value; 
                 std::cout<< "LOAD instruction: Loaded value " << value << " into register 0." << std::endl;
-                break;
+                break;;
             }
 
             case 3:{ //ADD (add values to a register)
-                pc++; uint16_t regIdx = memory[pc];
-                pc++; uint16_t val = memory[pc];
+                pc++; 
+                uint16_t regIdx = memory[pc];
+                pc++; 
+                uint16_t val = memory[pc];
                 registers[regIdx] += val;
                 std::cout<< "ADD instruction: Added value " << val << " to register " << regIdx << ". New value: " << registers[regIdx] << std::endl;
                 break;
@@ -55,6 +57,54 @@ void CPU::run(){
                 
             }
 
+            case 5:{ //JUMP
+                pc++; 
+                uint16_t targetAddr = memory[pc]; 
+                pc = targetAddr - 1; 
+                std::cout << "JUMP: Jumping to address " << targetAddr << std::endl;
+                break;
+            }
+
+            case 6:{ //SUB(Subtract)
+                pc++;
+                int subvalue = memory[pc];
+                pc++;
+                int regIdx = memory[pc];
+                registers[regIdx] -= subvalue;
+                std::cout<< "SUBTRACT instruction: Subtracted value " << subvalue << " from register " << regIdx << ". New value: " << registers[regIdx] << std::endl;
+                break;}
+            
+            case 7:{ //MUL(Multiply)
+                pc++;
+                int mulvalue = memory[pc];
+                pc++;
+                int regIdx = memory[pc];
+                registers[regIdx] *= mulvalue;
+                std::cout<< "MULTIPLY instruction: Multiplied register " << regIdx << " by value " << mulvalue << ". New value: " << registers[regIdx] << std::endl;
+                break;}
+            
+            case 8:{ //DIVIDE(Divide)
+                pc++;
+                int divvalue = memory[pc];
+                pc++;
+                int regIdx = memory[pc];
+                if (divvalue != 0) {
+                    registers[regIdx] /= divvalue;
+                    std::cout<< "DIVIDE instruction: Divided register " << regIdx << " by value " << divvalue << ". New value: " << registers[regIdx] << std::endl;
+                } else {
+                    std::cout<< "DIVIDE instruction: Division by zero error. Register " << regIdx << " remains unchanged." << std::endl;
+                }
+                break;}
+
+            
+            case 9: { // JUMP IF NOT ZERO
+                pc++;
+                uint16_t targetAddr = memory[pc];
+                if (registers[0] != 0) {
+                    pc = targetAddr - 1; 
+                }
+                break;
+                }
 
             default:{
                 std::cout<<"Uknown instruction"<< std::endl;
