@@ -1,15 +1,14 @@
 #include "cpu.hpp"
+#include "assembler.hpp"
 
 int main(){
-    CPU myVM;
-    std::vector<uint16_t> program ={2, 5,       // LOAD 5
-                                    6, 1, 0,    // SUB 1, R0
-                                    4, 0,       // PRINT R0
-                                    9, 2,       // JUMP_IF_NZ to address 2
-                                    1
-                                    };
-    myVM.loadProgram(program);
-    myVM.run();
+    CPU myCPU;
+    std::string program ="LOAD 5 SUB 1 0 PRINT 0 JNZ 2 HALT";
+
+    std::vector<uint16_t> machineCode = Assembler::assemble(program);
+
+    myCPU.loadProgram(machineCode);
+    myCPU.run();
 
     return 0;
 }
