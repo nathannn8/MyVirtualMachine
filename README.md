@@ -23,7 +23,7 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 ## Quick Documentation
 - Started with a CPU --> initialised 4 registers each 2 bytes, added some basic instructions.
 - Added more instructions.
-- Typing out numbers to run code is annoying so built an assembler.
+- Typing out numbers to run code is annoying so I built an assembler.
 
 ## How to Build & Run
 I am currently using `g++` on Windows to build the project.
