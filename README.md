@@ -20,6 +20,11 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 | 8 | DIV | Divides a register by a value. |
 | 9 | JUMP_IF_NZ | Jumps to an address only if Register 0 is not zero. |
 
+## Quick Documentation
+- Started with a CPU --> initialised 4 registers each 2 bytes, added some basic instructions.
+- Added more instructions.
+- Typing out numbers to run code is annoying so built an assembler.
+
 ## How to Build & Run
 I am currently using `g++` on Windows to build the project.
 
