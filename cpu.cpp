@@ -34,8 +34,10 @@ void CPU::run(){
             case 2:{ //LOAD
                 pc++;
                 uint16_t value = memory[pc];
-                registers[0] = value; 
-                std::cout<< "LOAD instruction: Loaded value " << value << " into register 0." << std::endl;
+                pc++;
+                uint16_t regIdx = memory[pc];
+                registers[regIdx] = value; 
+                std::cout<< "LOAD instruction: Loaded value " << value << " into register. " << regIdx << std::endl;
                 break;;
             }
 
@@ -100,11 +102,24 @@ void CPU::run(){
             case 9: { // JUMP IF NOT ZERO
                 pc++;
                 uint16_t targetAddr = memory[pc];
-                if (registers[0] != 0) {
+                pc++;
+                uint16_t regIdx = memory[pc];
+                if (registers[regIdx] != 0) {
                     pc = targetAddr - 1; 
                 }
                 break;
                 }
+
+            case 10: { // JUMP IF ZERO
+                pc++;
+                uint16_t targetAddr = memory[pc];
+                pc++;
+                uint16_t regIdx = memory[pc];
+                if (registers[regIdx] == 0) {
+                    pc = targetAddr - 1; 
+                }
+                break;
+            }
 
             default:{
                 std::cout<<"Uknown instruction"<< std::endl;
