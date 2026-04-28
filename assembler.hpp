@@ -10,7 +10,7 @@ public:
     static std::vector<uint16_t> assemble(std::string code){
         std::map<std::string, uint16_t> opcodes = {
             {"HALT", 1}, {"LOAD", 2}, {"ADD", 3}, {"PRINT", 4},
-            {"JUMP", 5}, {"SUB", 6}, {"MUL", 7}, {"DIV", 8}, {"JNZ", 9}
+            {"JUMP", 5}, {"SUB", 6}, {"MUL", 7}, {"DIV", 8}, {"JNZ", 9}, {"JZ", 10}
         };
         std::vector<uint16_t> machineCode;
         std::stringstream ss(code);

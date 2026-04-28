@@ -11,14 +11,16 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 | Opcode | Instruction | Description |
 | :--- | :--- | :--- |
 | 1 | HALT | Stops execution. |
-| 2 | LOAD | Loads a value into Register 0. |
+| 2 | LOAD | Loads a value into Register of choice. |
 | 3 | ADD | Adds a value to a specified register. |
 | 4 | PRINT | Outputs the value of a register. |
 | 5 | JUMP | Moves the program counter to a specific address. |
 | 6 | SUB | Subtracts a value from a register. |
 | 7 | MUL | Multiplies a register by a value. |
 | 8 | DIV | Divides a register by a value. |
-| 9 | JUMP_IF_NZ | Jumps to an address only if Register 0 is not zero. |
+| 9 | JUMP_IF_NZ | Jumps to an address only if Register of choice is not zero. |
+| 10 | JUMP_IF_NZ | Jumps to an address only if Register of choice is not zero. |
+
 
 ## Quick Documentation
 - Started with a CPU --> initialised 4 registers each 2 bytes, added some basic instructions.
