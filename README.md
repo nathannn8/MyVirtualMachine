@@ -6,6 +6,7 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 - Custom bytecode instruction set as mentioned below and I am still adding more things.
 - 4-register architecture.
 - 16-bit register memory.
+- 16-bit stack memory.
 
 ## Instruction set
 | Opcode | Instruction | Description |
@@ -27,7 +28,8 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 ## Quick Documentation
 - Started with a CPU --> initialised 4 registers each 2 bytes, added some basic instructions.
 - Added more instructions.
-- Typing out numbers to run code is annoying so I built an assembler.
+- Typing out numbers to run code is suboptimal so I built an assembler.
+- added jump if zero and a stack memory system.
 
 ## How to Build & Run
 I am currently using `g++` on Windows to build the project.
