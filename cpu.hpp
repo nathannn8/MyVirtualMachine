@@ -12,8 +12,11 @@ private:
     //Program Counter
     uint16_t pc;
 
-    //RAM
+    //Memory
     std::vector<uint16_t> memory;
+
+    //Stack
+    std::vector<uint16_t> stack;
 
 public:
     CPU(); //Constructor to initialize the CPU
