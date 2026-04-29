@@ -1,0 +1,15 @@
+Input - LOAD 10 0 LOAD 20 1 ADD 0 20 PRINT 0 HALT (Load two numbers, add them, print the result, and halt)
+        (put the input as a string in main.cpp, ie here - std::string program ="LOAD 10 0 LOAD 20 1 ADD 0 20 PRINT 0 HALT" )
+        
+Output - Executing instruction: 2 at address 0
+        LOAD instruction: Loaded value 10 into register. 0
+        Executing instruction: 2 at address 3
+        LOAD instruction: Loaded value 20 into register. 1
+        Executing instruction: 3 at address 6
+        ADD instruction: Added value 20 to register 0. New value: 30
+        Executing instruction: 4 at address 9
+        PRINT instruction: Value in register 0 is 30
+        Executing instruction: 1 at address 11
+        HALT instruction encountered. Stopping execution.
+        VM Halted.
+

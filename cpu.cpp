@@ -142,6 +142,15 @@ void CPU::run(){
                 break;
             }
 
+            case 13: { // ADD_REG: registers[regA] += registers[regB]
+                pc++; 
+                uint16_t regA = memory[pc];
+                pc++; 
+                uint16_t regB = memory[pc];
+                registers[regA] += registers[regB];
+                break;
+            }
+
             default:{
                 std::cout<<"Uknown instruction"<< std::endl;
                 break;
