@@ -1,4 +1,4 @@
-# MyVirtualMachine (Ongoing)
+# MyVirtualMachine
 
 This is a personal project to learn C++ by building a custom Virtual Machine from scratch. I'm exploring how CPUs work, specifically the Fetch-Decode-Execute cycle.
 
@@ -7,6 +7,7 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 - 4-register architecture.
 - 16-bit register memory.
 - 16-bit stack memory.
+- Example demos to view.
 
 ## Instruction set
 | Opcode | Instruction | Description |
@@ -31,6 +32,7 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 - Added more instructions.
 - Typing out numbers to run code is suboptimal so I built an assembler.
 - added jump if zero and a stack memory system.
+- ADD_REG added along with examples for demo.
 
 ## How to Build & Run
 I am currently using `g++` on Windows to build the project.
