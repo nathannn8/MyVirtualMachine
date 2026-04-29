@@ -121,6 +121,27 @@ void CPU::run(){
                 break;
             }
 
+            case 11: { // PUSH
+                pc++;
+                uint16_t regIdx = memory[pc];
+                stack.push_back(registers[regIdx]);
+                std::cout<< "PUSH instruction: Pushed value " << registers[regIdx] << " from register " << regIdx << " onto stack." << std::endl;
+                break;
+            }
+
+            case 12: { // POP
+                pc++;
+                uint16_t regIdx = memory[pc];
+                if (!stack.empty()) {
+                    registers[regIdx] = stack.back();
+                    stack.pop_back();
+                    std::cout<< "POP instruction: Popped value " << registers[regIdx] << " from stack into register " << regIdx << "." << std::endl;
+                } else {
+                    std::cout<< "POP instruction: Stack underflow error. Register " << regIdx << " remains unchanged." << std::endl;
+                }
+                break;
+            }
+
             default:{
                 std::cout<<"Uknown instruction"<< std::endl;
                 break;

@@ -19,7 +19,9 @@ This is a personal project to learn C++ by building a custom Virtual Machine fro
 | 7 | MUL | Multiplies a register by a value. |
 | 8 | DIV | Divides a register by a value. |
 | 9 | JUMP_IF_NZ | Jumps to an address only if Register of choice is not zero. |
-| 10 | JUMP_IF_NZ | Jumps to an address only if Register of choice is not zero. |
+| 10 | JUMP_IF_NZ | Jumps to an address only if Register of choice is zero. |
+| 11 | PUSH | Pushes register value to stack. |
+| 12 | POP| Pops value in stack and puts it into register. |
 
 
 ## Quick Documentation
